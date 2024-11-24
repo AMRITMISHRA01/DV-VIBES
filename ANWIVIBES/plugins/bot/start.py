@@ -90,17 +90,29 @@ async def start_pm(client, message: Message, _):
         else:
             userss_photo = config.START_IMG_URL
             
-        await message.reply_photo(
-            photo=userss_photo,
-            caption=_["start_2"].format(message.from_user.mention, app.mention))
-           # reply_markup=InlineKeyboardMarkup(out),
-    #    )
-        if await is_on_off(2):
-            return await app.send_message(
-                chat_id=config.LOGGER_ID,
-                text=f"{message.from_user.mention} ᴊᴜsᴛ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ.\n\n<b>ᴜsᴇʀ ɪᴅ :</b> <code>{message.from_user.id}</code>\n<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.from_user.username}",
-            )
+        userss_photo = await ERACHAT.download_media(m.chat.photo.big_file_id)
+                await umm.delete()
+                if userss_photo:
+                    chat_photo = userss_photo
+            except AttributeError:
+                chat_photo = BOT  
 
+        users = len(await get_served_users())
+        chats = len(await get_served_chats())
+        UP, CPU, RAM, DISK = await bot_sys_stats()
+        await m.reply_photo(photo=chat_photo, caption=START.format(ERACHAT.mention or "can't mention", users, chats, UP), reply_markup=InlineKeyboardMarkup(START_BOT))
+        await add_served_user(m.chat.id)
+        keyboard = InlineKeyboardMarkup([[InlineKeyboardButton(f"{m.chat.first_name}", user_id=m.chat.id)]])
+        await ERACHAT.send_photo(int(OWNER_ID), photo=chat_photo, caption=f"{m.from_user.mention} ʜᴀs sᴛᴀʀᴛᴇᴅ ʙᴏᴛ. \n\n**ɴᴀᴍᴇ :** {m.chat.first_name}\n**ᴜsᴇʀɴᴀᴍᴇ :** @{m.chat.username}\n**ɪᴅ :** {m.chat.id}\n\n**ᴛᴏᴛᴀʟ ᴜsᴇʀs :** {users}", reply_markup=keyboard)
+        
+    else:
+        await m.reply_photo(
+            photo=random.choice(IMG),
+            caption=GSTART.format(m.from_user.mention or "can't mention"),
+            reply_markup=InlineKeyboardMarkup(HELP_START),
+        )
+        await add_served_chat(m.chat.id)
+        
 
 @app.on_message(filters.command(["start"]) & filters.group & ~BANNED_USERS)
 @LanguageStart
