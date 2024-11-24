@@ -45,6 +45,53 @@ async def start_pm(client, message: Message, _):
                     chat_id=config.LOGGER_ID,
                     text=f"{message.from_user.mention} ᴊᴜsᴛ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ʙᴏᴛ ᴛᴏ ᴄʜᴇᴄᴋ <b>sᴜᴅᴏʟɪsᴛ</b>.\n\n<b>ᴜsᴇʀ ɪᴅ :</b> <code>{message.from_user.id}</code>\n<b>ᴜsᴇʀɴᴀᴍᴇ :</b> @{message.from_user.username}",
                 )
+```
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+
+def start_panel():
+    start_btn = [
+        [
+            InlineKeyboardButton(
+                "👋 Hello",
+                callback_data="hello"
+            ),
+            InlineKeyboardButton(
+                "🤔 About",
+                callback_data="about"
+            )
+        ],
+        [
+            InlineKeyboardButton(
+                "📚 Help",
+                callback_data="help"
+            ),
+            InlineKeyboardButton(
+                "👥 Support",
+                url="(link unavailable)"
+            )
+        ]
+    ]
+    return InlineKeyboardMarkup(start_btn)
+```
+This implementation returns an `InlineKeyboardMarkup` object containing a 2x2 grid of buttons:
+
+1. "Hello" (callback data: "hello")
+2. "About" (callback data: "about")
+3. "Help" (callback data: "help")
+4. "Support" (URL: your support group link)
+
+You can customize the button text, callback data, and URLs to fit your bot's requirements.
+
+To use this `start_panel` function in your `/start` command handler:
+```
+@app.on_message(filters.command(["start"]) & filters.private & ~BANNED_USERS)
+@LanguageStart
+async def start_pm(client, message: Message, _):
+    await add_served_user((link unavailable))
+    start_keyboard = start_panel()
+    await message.reply_text("Welcome!", reply_markup=start_keyboard)
+```
+This code sends a welcome message with the `start_panel` keyboard when the `/start` command is received.
             return
         if name[0:3] == "inf":
             m = await message.reply_text("🔎")
