@@ -12,7 +12,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from ANWIVIBES import app
 
 start_txt = """
-❖ ʜᴇʏ , ᴛʜᴇʀᴇ ɴɪᴄᴇ ᴛᴏ ᴍᴇᴇᴛ ʏᴏᴜ  ♥︎\n\n● ɪғ ʏᴏᴜ ᴡᴀɴᴛ ANWI VIBES ʙᴏᴛ ʀᴇᴘᴏ ᴛʜᴇɴ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴄᴏʟʟᴇᴄᴛ ᴍʏ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ.\n\n❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ ANWI VIBES"""
+❖ ʜᴇʏ , ᴛʜᴇʀᴇ ɴɪᴄᴇ ᴛᴏ ᴍᴇᴇᴛ ʏᴏᴜ  ♥︎\n\n● ɪғ ʏᴏᴜ ᴡᴀɴᴛ Mishra ʙᴏᴛ ʀᴇᴘᴏ ᴛʜᴇɴ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ʙᴜᴛᴛᴏɴ ᴛᴏ ᴄᴏʟʟᴇᴄᴛ ᴍʏ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ.\n\n❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ ANWI VIBES"""
 
 
 
@@ -21,7 +21,7 @@ start_txt = """
 async def start(_, msg):
     buttons = [
         [
-          InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url="https://t.me/+7ehnJA3aMb84OGNl"),
+          InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ", url="https://t.me/mishraXhub"),
           InlineKeyboardButton("ʀᴇᴘᴏ", url="https://github.com/IamDvis/DV-VIBES")
           ],
     ]
