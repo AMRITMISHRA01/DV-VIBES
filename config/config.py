@@ -11,13 +11,13 @@ API_ID = getenv("API_ID", None)
 API_HASH = getenv("API_HASH", None)
 
 #❖ Add Owner Username without @ 
-OWNER_USERNAME = getenv("OWNER_USERNAME", "OfficialDurgesh")
+OWNER_USERNAME = getenv("OWNER_USERNAME", "BRAND_BRAHMAN")
 
 #❖  Get Your bot username
-BOT_USERNAME = getenv("BOT_USERNAME", "AnwiVibesBot")
+BOT_USERNAME = getenv("BOT_USERNAME", "mishraxmusicbot")
 
 #❖  Don't Add style font 
-BOT_NAME = getenv("BOT_NAME", "ANWI VIBES")
+BOT_NAME = getenv("BOT_NAME", "Mishra x bot")
 
 #❖ get Your Assistant User name
 ASSUSERNAME = getenv("ASSUSERNAME", "ANWIS VIBER")
@@ -57,8 +57,8 @@ GIT_TOKEN = getenv(
     "GIT_TOKEN", None
 )  #❖ Fill this variable if your upstream repository is private
 
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/ai_image_junction")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/+7ehnJA3aMb84OGNl")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/MishraXnetwork")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/mishraXhub")
 
 #❖ Set this to True if you want the assistant to automatically leave chats after an interval
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", False))
